@@ -1,0 +1,4 @@
+export const config = {
+  userToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIwZWE3ZmMyLTJjYTUtNGQxNi05NDBhLTNlMzkyZjE0MTdmYiIsIm5hbWUiOiJBZ3VzdGluaG8gTmV0byIsImlhdCI6MTcyMTMxOTg0NSwiZXhwIjoxNzIxNzUxODQ1fQ.93xLVuBQwPOWbkCAIzhe3FiEJSIAj37C5h3k4ZWPB_k',
+  apiUrl: 'http://localhost:3001'
+}
