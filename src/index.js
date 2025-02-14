@@ -19,10 +19,10 @@ async function seed() {
     const categoryForm = new FormData();
 
     categoryForm.append('name', category.name);
-    categoryForm.append('file', fs.createReadStream(category.file));
+    categoryForm.append('path', fs.createReadStream(category.path));
 
     try {
-      const { data: createdCategory } = await api.post('/categories', categoryForm, {
+      const { data: createdCategory } = await api.post('/createCategory', categoryForm, {
         headers: {
           'Content-Type': 'multipart/form-data',
         }
@@ -40,13 +40,13 @@ async function seed() {
 
     productForm.append('name', product.name);
     productForm.append('price', product.price);
+    productForm.append('path', fs.createReadStream(product.path));
+    productForm.append('ofert', String(product.ofert));
     productForm.append('category_id', product.category_id);
-    productForm.append('offer', String(product.offer));
-    productForm.append('file', fs.createReadStream(product.file));
 
 
     try {
-      const { data: createdProduct } = await api.post('/products', productForm, {
+      const { data: createdProduct } = await api.post('/productRegister', productForm, {
         headers: {
           'Content-Type': 'multipart/form-data',
         }
